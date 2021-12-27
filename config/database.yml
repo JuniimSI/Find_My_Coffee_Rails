@@ -21,6 +21,7 @@ test:
 
 production:
   <<: *default
+  uri: postgis://hanvbydhfpcigl:434bfc37722023b91a4065db78628b27e29c930db6fb137b5cbaf6055cddbfb7@ec2-54-204-99-176.compute-1.amazonaws.com:5432/dbplnaf0mb9c61
   host: ec2-54-204-99-176.compute-1.amazonaws.com
   database: dbplnaf0mb9c61
   username: hanvbydhfpcigl
