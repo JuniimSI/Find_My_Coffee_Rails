@@ -1,23 +1,27 @@
 default: &default
-  adapter: postgis
+  adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: postgres
-  host: localhost
+  
 
 development:
   <<: *default
   database: find_my_coffee_api_development
-
+  host: ec2-54-204-99-176.compute-1.amazonaws.com
+  database: dbplnaf0mb9c61
+  username: hanvbydhfpcigl
+  password: <%= ENV['FIND_MY_COFFEE_API_DATABASE_PASSWORD'] %>
   
 test:
   <<: *default
   database: find_my_coffee_api_test
+  username: postgres
+  password: postgres
+  host: localhost
 
 production:
   <<: *default
   host: ec2-54-204-99-176.compute-1.amazonaws.com
   database: dbplnaf0mb9c61
   username: hanvbydhfpcigl
-  password: <%= ENV['FIND_MY_COFFEE_API_DATABASE_PASSWORD'] %>
+  password: 434bfc37722023b91a4065db78628b27e29c930db6fb137b5cbaf6055cddbfb7
