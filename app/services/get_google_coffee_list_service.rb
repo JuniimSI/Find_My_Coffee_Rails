@@ -10,7 +10,7 @@ class GetGoogleCoffeeListService
   def call
     begin
       location = "location=#{@latitude},#{@longitude}"
-      base_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=coffee+shop&#{location}&radius=3000&key=#{Rails.application.credentials.google_secret_key}"
+      base_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=coffee+shop&#{location}&radius=5000&key=#{Rails.application.credentials.google_secret_key}"
       response = RestClient.get base_url
       JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
